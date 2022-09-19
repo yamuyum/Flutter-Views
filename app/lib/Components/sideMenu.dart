@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterview/Views/Line/allMessagesView.dart';
+import 'package:flutterview/Views/Starbucks/homeView.dart';
+import 'package:flutterview/Views/homeView.dart';
 import 'package:flutterview/Views/loginView.dart';
 
 class SideMenu extends StatefulWidget {
@@ -25,11 +28,11 @@ class _SideMenuState extends State<SideMenu> {
               title: "Home",
               icon: Icons.home,
               press: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(builder: (context) => ●●(),
-                //     )
-                // );
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeView(),
+                    ));
               },
             ),
             DrawerListTile(
@@ -40,6 +43,28 @@ class _SideMenuState extends State<SideMenu> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => LoginView(),
+                    ));
+              },
+            ),
+            DrawerListTile(
+              title: "Line",
+              icon: Icons.message,
+              press: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LineAllMessagesView(),
+                    ));
+              },
+            ),
+            DrawerListTile(
+              title: "StarBucks",
+              icon: Icons.local_drink,
+              press: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => StarbucksHomeView(),
                     ));
               },
             ),

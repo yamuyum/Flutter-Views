@@ -42,12 +42,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
-      // theme: ThemeData(
-      //   primaryColor: bgColor,
-      //   primarySwatch: Colors.blue,
-      // ),
+      // theme: ThemeData.light(),
+      // darkTheme: ThemeData.dark(),
+      theme: ThemeData(
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: Colors.black),
+        primaryColor: bgColor,
+        primarySwatch: Colors.blue,
+      ),
       // 初手出ししたい画面を
       home: HomeView(),
     );

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import '../Constants/colors.dart';
 import '../Constants/constants.dart';
@@ -42,9 +44,9 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(defaultPadding / 4),
+      margin: EdgeInsets.all(DEFAULTPADDING / 4),
       padding: EdgeInsets.symmetric(
-        horizontal: defaultPadding,
+        horizontal: DEFAULTPADDING,
         // vertical: defaultPadding / 2,
       ),
       decoration: BoxDecoration(
@@ -78,8 +80,8 @@ class SearchField extends StatelessWidget {
         suffixIcon: InkWell(
           onTap: () {},
           child: Container(
-              padding: EdgeInsets.all(defaultPadding * 0.75),
-              margin: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+              padding: EdgeInsets.all(DEFAULTPADDING * 0.75),
+              margin: EdgeInsets.symmetric(horizontal: DEFAULTPADDING / 2),
               decoration: BoxDecoration(
                 color: primaryColor,
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -90,5 +92,47 @@ class SearchField extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class LineHeader extends StatelessWidget with PreferredSizeWidget {
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        // サイドメニューとかぶるからいらない
+        // leading: IconButton(
+        //   onPressed: () {},
+        //   icon: Icon(Icons.menu),
+        // ),
+        backgroundColor: bgWhiteColor,
+        automaticallyImplyLeading: false,
+        title: Text(
+          'ホーム',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+            color: Colors.black,
+          ),
+        ),
+        actions: [
+          IconButton(
+            color: Colors.black,
+            icon: const Icon(Icons.playlist_add_check),
+            onPressed: () {},
+          ),
+          IconButton(
+            color: Colors.black,
+            icon: const Icon(Icons.crop_square_rounded),
+            onPressed: () {},
+          ),
+          IconButton(
+            color: Colors.black,
+            icon: const Icon(Icons.add_comment_outlined),
+            onPressed: () {},
+          ),
+        ]);
   }
 }

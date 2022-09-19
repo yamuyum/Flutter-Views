@@ -10,3 +10,6 @@ const primaryColorHeader = Colors.blue;
 const primaryColor = Color(0xFF2697FF);
 const secondaryColor = Color(0xFFfbfcff);
 const bgColor = Color(0xFF2A2D3E);
+
+const bgBlackColor = Color(0xFF2A2D3E);
+const bgWhiteColor = Color(0xFFfbfcff);
